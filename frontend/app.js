@@ -1,5 +1,6 @@
 // AI Attribution: Built with assistance from Claude Sonnet 4.6
-const ws = new WebSocket(`ws://${window.location.host}`);
+const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+const ws = new WebSocket(`${protocol}//${window.location.host}`);
 const games = {};
 
 ws.onopen = () => {
